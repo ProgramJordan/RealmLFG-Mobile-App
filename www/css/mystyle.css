@@ -1,0 +1,100 @@
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    align: center;
+}
+
+label.error{
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border: 1px red solid;
+}
+#currentBtn{
+    background-image: url("lib/images/realmbanner.jpg");
+
+    background-position: 885px 550px;
+
+}
+.currentBtn{
+    background-image: url("lib/images/realmbanner.jpg");
+
+    background-position: 885px 550px;
+
+}
+.lfgDesktop{
+
+    background-image: url("lib/images/realmbanner.jpg");
+    background-position: -90px 90px;
+    border-style: solid;
+    border-color: white;
+}
+.lfgDiscord{
+    background-image: url("lib/images/RR-Discord-SL-InlineBanner-Donuts-600x172-Branded.png");
+    background-position: -8px 340px;
+
+
+}
+.altApp{
+    text-align: center;
+    font-weight: bold;
+    color: lightseagreen;
+
+
+}
+.lorem20{
+    color: silver;
+}
+.info{
+    color: lightseagreen;
+    font-weight: bold;
+}
+.aboutTxt{
+    color: lightseagreen;
+
+}
+.ui-btn-active{
+
+    color: teal;
+}
+.ui-state-persist{
+    color: teal;
+}
+.bannerImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align: center;
+
+
+}
+.activePost{
+    color: lightseagreen;
+    font-weight: bold;
+}
+/*.xbox{*/
+    /*color: green;*/
+/*}*/
+/*.pc{*/
+    /*color: goldenrod;*/
+/*}*/
+/*.ps4{*/
+    /*color: mediumblue;*/
+    /*background-color: blue;*/
+/*}*/

@@ -1,0 +1,257 @@
+<!--
+     Date : April 08th 2019
+     Class: Final Assignment - Mobile Applications
+     Created By: Jordan G. Weadick
+     Email: Jweadick8689@conestogac.on.ca
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Testing MultiColumn Content</title>
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery mobile-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--jQuery Css-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--Personal Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+
+    <script src="js/lib/jquery.validate.js"></script>
+
+    <!--our script files-->
+    <script src="js/database.js"></script>
+    <script src="js/feedbackDAL.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/facade.js"></script>
+
+    <title>Realm Royale Tournament</title>
+</head>
+<body>
+
+<!--page 1-->
+<div id="homepage" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" data-theme="b">
+        <h3>Home LFG</h3>
+        <div data-role="navbar" data-inconpos="top">
+            <ul>
+                <li><a href="#homepage" data-theme="b" data-icon="home"
+                       class="ui-btn-active ui-state-persist" title="homepage" id="currentBtn">Home</a></li>
+                <li><a href="#addPostPage" data-theme="b" data-icon="plus" title="addPostPage">Post</a></li>
+                <li><a href="#viewPostPage" data-theme="b" data-icon="grid" title="viewPostPage">LFG</a></li>
+                <li><a href="#settingsPage" data-theme="b" data-icon="gear" title="settingsPage">Setting</a></li>
+                <li><a href="#aboutPage" data-icon="info" data-theme="b" title="aboutPage">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content" data-theme="b">
+        <h1 align="center" class="lorem20">Realm Royale Tournament</h1>
+
+        <img src="img/Jw-icon.png" alt="duck image" width="256" height="256" class="center">
+
+        <fieldset data-role="controlgroup" data-type="vertical">
+        <p align="center" class="lorem20" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolore ea eligendi fugit illum
+            maxime, mollitia nostrum qui quos recusandae sed, sequi! Ad alias atque consectetur dolor earum, fugit iusto
+            labore maxime minus necessitatibus odit provident quia ratione sapiente </p>
+        <p class="altApp">Desktop Apps</p>
+
+        <a href="https://steamcommunity.com/app/813820/discussions/9/"  target="_blank" data-icon="plus" class="lfgDesktop" data-role="button"><h3 id="lfg"> LFG
+            Desktop </h3></a>
+            <br>
+        <a href="https://discord.gg/Xdwdvn" target="_blank" data-icon="plus" data-role="button" class="lfgDiscord"><h3>LFG Discord</h3></a>
+
+        </fieldset>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+
+<!--page 2-->
+<div id="addPostPage" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" data-theme="b">
+        <h1>Post to Tournament</h1>
+        <div data-role="navbar" data-inconpos="top">
+            <ul>
+                <li><a href="#homepage" data-theme="b" data-icon="home" title="JwNavHome">Home</a></li>
+                <li><a href="#addPostPage" class="currentBtn" data-theme="b" data-icon="plus"
+                       class="ui-btn-active ui-state-persist" data-theme="b" title="JwNavAdd">Post</a></li>
+                <li><a href="#viewPostPage" data-icon="grid" data-theme="b" title="JwNavReviews">LFG</a></li>
+                <li><a href="#settingsPage" data-icon="gear" data-theme="b" title="JwNavSettings">Setting</a></li>
+                <li><a href="#aboutPage" data-icon="info" data-theme="b" title="JwNavSettings">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content" data-theme="b">
+        <form id="FrmAddPost" name="FrmAddPost">
+            <li class="info">Group up by submitting an LFG post</li>
+            <li class="info">Wait for in game LFG requests.</li>
+            <li class="info">Use LFG to view other LFG requests.</li>
+
+            <h5>In-Game Username:</h5>
+            <input type="text" id="username" name="username">
+
+            <h5>Platform:</h5>
+            <fieldset data-role="controlgroup" data-type="horizontal" id="platformOption" name="platformOption">
+                <input type="radio" id="radPc" name="radConsoleAdd" >
+                <label for="radPc" >PC</label>
+
+                <input type="radio" id="radPs4" name="radConsoleAdd">
+                <label for="radPs4" style="color:midnightblue">PS4</label>
+
+                <input type="radio" id="radXbox" name="radConsoleAdd">
+                <label for="radXbox" style="color:darkgreen">XBOX</label>
+            </fieldset>
+            <h5>Description:</h5>
+            <textarea rows="2" cols="20" maxlength="265" id="DescTA" name="DescTA"></textarea>
+
+            <h5>Available on the Day:</h5> <input type="date" name="dateAvailable" id="dateAvailable">
+            <br>
+            <button style="background-color: lightseagreen" data-inline="true"
+                    id="saveBtn" name="saveBtn">Save
+            </button>
+        </form>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+
+<!--page 3-->
+<div id="viewPostPage" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" title="List of reviews" data-theme="b">
+        <h1>Looking for Group</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#homepage" data-icon="home" title="addPostPage" data-theme="b">Home</a></li>
+                <li><a href="#addPostPage" data-icon="plus" title="addPostPage" data-theme="b">Post</a></li>
+                <li><a href="#viewPostPage" data-icon="grid" class="currentBtn"
+                       class="ui-btn-active ui-state-persist" title="viewPostPage" data-theme="b">LFG</a>
+                </li>
+                <li><a href="#settingsPage" data-icon="gear" data-theme="b" title="settingsPage">Settings</a></li>
+                <li><a href="#aboutPage" data-icon="info" data-theme="b" title="aboutPage">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content" data-theme="b">
+        <img src="css/lib/images/early-access.jpg" class="bannerImg" width="220" height="140" >
+        <p style="text-align: center" class="activePost">Current Active Posts</p>
+        <ul id="PostList" data-role="listview" class="ui-listview-inset" data-icon="">
+        </ul>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+
+<!--page 4-->
+<div id="settingsPage" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" data-theme="b">
+        <h1>Settings</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#homepage" data-theme="b" data-icon="home" title="homepage">Home</a></li>
+                <li><a href="#addPostPage" data-theme="b" data-icon="plus" title="addPostPage">Post</a></li>
+                <li><a href="#viewPostPage" data-theme="b" data-icon="grid" title="viewPostPage">LFG</a></li>
+                <li><a href="#settingsPage" data-theme="b" data-icon="gear" class="currentBtn"
+                       class="ui-btn-active ui-state-persist" title="settingsPage">Settings</a></li>
+                <li><a href="#aboutPage" data-icon="info" data-theme="b" title="aboutPage">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role="content" data-theme="b">
+        <h5>Default Game Username:</h5>
+        <input type="text" maxlength="35" id="DefaultUsername">
+        <button type="submit"  style="background-color: lightseagreen" action="#" id="SaveDefaultUsername">Set Username
+        </button>
+        <button type="submit" data-theme="b" action="#" id="ClearDatabase">Clear LFG</button>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+
+<!--page 5-->
+<div id="viewPostPageMore" name="viewPostPageMore" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" title="List of reviews" data-theme="b">
+        <h1>Viewing LFG Tournament post</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#homepage" data-icon="home" data-theme="b" title="homepage">Home</a></li>
+                <li><a href="#addPostPage" data-icon="plus" data-theme="b" title="addPostPage">Post</a></li>
+                <li><a href="#viewPostPage" data-icon="grid" class="currentBtn"
+                       class="ui-btn-active ui-state-persist" data-theme="b" title="viewPostPage">LFG</a></li>
+                <li><a href="#settingsPage" data-icon="gear" data-theme="b" title="settingsPage">Setting</a></li>
+                <li><a href="#aboutPage" data-icon="info" data-theme="b" title="aboutPage">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content" data-theme="b">
+        <form id="frmViewPost" name="frmViewPost">
+            <h5>Username:</h5><input type="text" id="usernameModify" name="usernameModify" value="TwoUndead" disabled>
+            <fieldset data-role="controlgroup" data-type="horizontal" id="platformOptionModify">
+                <input type="radio" id="radModifyPc" class="pc" name="radConsoleModifyAdd" checked="checked" disabled>
+                <label for="radModifyPc" >PC</label>
+
+                <input type="radio" id="radModifyPs4" class="ps4" name="radConsoleModifyAdd"disabled>
+                <label for="radModifyPs4" style="color:midnightblue">PS4</label>
+
+                <input type="radio" id="radModifyXbox" class="xbox" name="radConsoleModifyAdd"disabled>
+                <label for="radModifyXbox" style="color:darkgreen">XBOX</label>
+            </fieldset>
+            <h5>Description:</h5><textarea disabled rows="2" cols="20" id="DescTAModify" name="DescTAModify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur corporis cumque, debitis eveniet impedit laboriosam nobis officia qui velit!</textarea>
+            <h5>Available on day:</h5> <input disabled type="date" name="dateAvailableModify" id="dateAvailableModify">
+
+            <!--<fieldset data-role="controlgroup" data-type="horizontal">-->
+                <!--<button id="CancelBtn" name="CancelBtn">Cancel</button>-->
+                <!--<button data-theme="b" id="DeleteBtn" name="DeleteBtn">Delete</button>-->
+                <!--<button class="ui-btn-active ui-state-persist" id="UpdateBtn" name="UpdateBtn">Update</button>-->
+            <!--</fieldset>-->
+        </form>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+
+<!--page 6-->>
+<div id="aboutPage" name="aboutPage" data-role="page" data-theme="b">
+    <header data-role="header" data-position="fixed" title="About Creator" data-theme="b">
+        <h1>About Developer</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#homepage" data-icon="home" data-theme="b" title="JwNavHome">Home</a></li>
+                <li><a href="#addPostPage" data-icon="plus" data-theme="b" title="JwNavAdd">Add</a></li>
+                <li><a href="#viewPostPage" data-icon="grid" data-theme="b" title="JwNavReviews">Reviews</a></li>
+                <li><a href="#settingsPage" data-icon="gear" data-theme="b" title="JwNavSettings">Settings</a></li>
+                <li><a href="#aboutPage" class="currentBtn" class="ui-btn-active ui-state-persist" data-icon="info"
+                       data-theme="b" title="JwNavSettings">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role="content" data-theme="b">
+        App Developer: <h5><i class="aboutTxt"> Jordan G. Weadick</i></h5><br>
+        Date Published:<h5><i class="aboutTxt">March 27th 2019</i></h5><br>
+        Class: <h5><i class="aboutTxt">Mobile Applications</i></h5><br>
+        Teacher: <h5><i class="aboutTxt">Sabbir Ahmed</i></h5>
+        <h4></h4>
+        <br>
+        <p>Contact options:</p>
+        <a href="mailto: jweadick8689@conestogac.on.ca"  data-role="button" data-icon="plus"><h3 class="aboutTxt">
+            Email</h3></a>
+
+        <a href="#"  data-role="button" data-icon="plus"><h3 class="aboutTxt">
+            Phone</h3></a>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h3><b>&copy 2019 Jordan G. Weadick</b></h3>
+    </footer>
+</div>
+</body>
+</html>
