@@ -6,5 +6,5 @@
 - CRUD functionality for Personal posts + setting.
 
 
-This Mobile application was created as a project to demonstrate CRUD functionalitys, use of Cordova. Written using JavaScript and jQuery.
+This Mobile application was created as a project to demonstrate CRUD functionalitys, use of Cordova. Written using JavaScript and jQuery using the Desktop application WEBSTORM.
 -Current version : app-debug.apk
